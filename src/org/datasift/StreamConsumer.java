@@ -45,7 +45,7 @@ abstract public class StreamConsumer {
 	public static StreamConsumer factory(User user, String type,
 			Definition definition, IStreamConsumerEvents eventHandler)
 			throws EInvalidData, ECompileFailed, EAccessDenied {
-		if (type == StreamConsumer.TYPE_HTTP) {
+		if (type.equals(StreamConsumer.TYPE_HTTP)) {
 			return new Http(user, definition, eventHandler);
 		}
 
